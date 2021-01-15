@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title> Ayush Gupta</title>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="ayushgupta.js"></script>
+        <link rel="stylesheet" href="ayushgupta.css">
+        <style>
+            #livebtn{
+                background-color: #000506;
+                border-radius: 2rem;
+                border: none;
+                color: #fafafa;
+                font-size: 15px;
+                font-weight: bold;
+                display: inline-block;
+                padding: 1rem 2.5rem;
+                transition: background-color 250ms;
+                outline: 0;
+            }
+            #livebtn:hover{
+                background-color:  rgb(82, 131, 255);
+            }
+        </style>
+    </head>
+    <body>
+        <!-- fixed navigation for easy access -->
+        <nav>
+            <div class="logo">
+                <a href="ayushgupta.html"><h3 class="logo">Ayush Gupta</h3></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="ayushgupta.html#bio">About Me</a></li>
+                <li><a href="ayushgupta_family.html">Family</a></li>
+                <li><a href="ayushgupta_hobbies.html">Hobbies</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+        <!-- activates mobile navigation menu toggle -->
+        <script>
+            const navSlide = () => {
+            const burger = document.querySelector(".burger");
+            const nav = document.querySelector(".nav-links");
+            const navLinks = document.querySelectorAll('.nav-links li');
+            //Toggle Nav
+            burger.addEventListener('click', () => {
+                nav.classList.toggle('nav-active');
+                //Animate links
+                navLinks.forEach((link, index)=>{
+                    if(link.style.animation){
+                        link.style.animation = ''
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+                //Burger animation
+                burger.classList.toggle('toggle');
+                });
+            }
+            navSlide()
+        </script>
+         <!-- landing text -->
+        <div id="home">
+            <div class="landing-text">
+                <h1>Ayush Gupta</h1>
+                <h3>APCSP P4</h3>
+            </div>
+        </div>
+        <!-- biography -->
+        <div class="bio" id="bio">
+            <img class="zoom" src="http://ayushgupta.art/ayush.jpg">
+            <h3>About Me</h3>
+            <!-- moving carousel -->
+            <div class="carousel">
+                <ul>
+                    <li>
+                        <text class="title">Name:</text><h3 class="info" id="bioname">&nbsp</h3>
+                    </li>
+                    <hr>
+                    <li>
+                        <text class="title">Age:</text><h3 class="info" id="bioage">&nbsp</h3>
+                    </li>
+                    <hr>
+                    <li>
+                        <text class="title">Grade:</text><h3 class="info" id="biograde">&nbsp</h3>                           
+                    </li>
+                    <hr>
+                    <li>
+                        <text class="title">Height:</text><h3 class="info" id="bioheight">&nbsp</h3>                                        
+                    </li>
+                    <hr>
+                    <li>
+                        <text class="title">School:</text><h3 class="info" id="bioschool">&nbsp</h3>                                          
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- section for where I live -->
+        <div class="house"><br><br>
+            <button id="housebtn" class="btn">Click To See Where I Live</button><br><br>
+            <img id="houseimg" class="zoom" src="">
+            <h3 class="livetitle" id="earth">The Earth</h3>
+        </div>
+        <!-- section for where I want to live -->
+        <div class="live"><br><br>
+            <button id="livebtn">Click To See Where I Want To Live</button><br><br>
+            <img id="liveimg" class="zoom" src="">
+            <h3 class="livetitle" id="moon">The Moon</h3>
+        </div>
+        <!-- footer -->
+        <footer>
+            <h3>AYUSH GUPTA</h3>
+            <p>APCSP</p><p>Period: 4</p>
+        </footer>
+    </body>
+</html>
